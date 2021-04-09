@@ -111,7 +111,7 @@ section {
   .map {
     position: relative;
     width: 78vw;
-    height: 77.3vw;
+    height: 77.5vw;
     margin: 10vw auto;
     background-color: black;
   }
@@ -121,10 +121,11 @@ section {
     grid-template-rows: repeat(3, 25vw);
     grid-gap: 0.9vw;
     align-items: center;
+    border: 2px solid black;
   }
   .grid div {
-    width: 24.5vw;
-    height: 24.5vw;
+    width: 25vw;
+    height: 25vw;
   }
   #single,
   #multi,
