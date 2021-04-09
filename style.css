@@ -1,0 +1,149 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#board {
+  width: 50vw;
+  height: 100vh;
+  border: 2px solid red;
+}
+.map {
+  position: relative;
+  width: 32vw;
+  height: 32.04vw;
+  margin: 15vh auto;
+  background-color: black;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+  grid-gap: 1vw;
+  justify-content: center;
+  align-content: center;
+}
+.evens {
+  background-color: red;
+}
+.odds {
+  background-color: blue;
+}
+.grid div {
+  width: 10vw;
+  height: 10vw;
+}
+#message {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.places {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+#message #title {
+  font-size: 3rem;
+  margin-top: 150px;
+}
+#single,
+#multi,
+#restart {
+  width: 100px;
+  height: 50px;
+  margin: 40px 50px;
+}
+.mob {
+  display: flex;
+}
+#win {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-top: 50px;
+}
+/* Mobile */
+@media only screen and (max-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+  .evens {
+    background-color: red;
+  }
+  .odds {
+    background-color: blue;
+  }
+  .places {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #board {
+    height: 60vh;
+    width: 100vw;
+  }
+  #message {
+    width: 100vw;
+    height: 40vh;
+  }
+  #message #title {
+    font-size: 2rem;
+    margin: 15px auto;
+  }
+  .map {
+    position: relative;
+    width: 78vw;
+    height: 77.3vw;
+    margin: 10vw auto;
+    background-color: black;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    grid-template-rows: repeat(3, 25vw);
+    grid-gap: 1vw;
+    align-items: center;
+  }
+  .grid div {
+    width: 25vw;
+    height: 25vw;
+  }
+  #single,
+  #multi,
+  #restart {
+    width: 80px;
+    height: 35px;
+    margin: auto 10px;
+  }
+  .mob {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #message #title {
+    font-size: 2rem;
+    margin-top: 15px;
+  }
+  #win {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+}
