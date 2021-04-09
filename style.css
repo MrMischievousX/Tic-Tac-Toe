@@ -7,6 +7,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 section {
   display: grid;
@@ -74,6 +75,12 @@ section {
   font-size: 3rem;
   margin-top: 50px;
 }
+footer {
+  font-size: large;
+  font-weight: 800;
+  position: absolute;
+  bottom: 100px;
+}
 /* Mobile */
 @media only screen and (max-width: 1024px) {
   body {
@@ -103,6 +110,7 @@ section {
   #message {
     width: 100vw;
     height: 40vh;
+    overflow: hidden;
   }
   #message #title {
     font-size: 2rem;
@@ -119,7 +127,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 25vw);
     grid-template-rows: repeat(3, 25vw);
-    grid-gap: 0.9vw;
+    grid-gap: 0.8vw;
     align-items: center;
     border: 2px solid black;
   }
@@ -133,10 +141,11 @@ section {
     width: 80px;
     height: 35px;
     margin: auto 10px;
+    border: 2px solid blue;
   }
   .mob {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   #message #title {
     font-size: 2rem;
@@ -146,5 +155,10 @@ section {
     font-weight: 600;
     font-size: 2rem;
     margin-top: 20px;
+  }
+  footer {
+    font-size: large;
+    font-weight: 800;
+    bottom: 20px;
   }
 }
