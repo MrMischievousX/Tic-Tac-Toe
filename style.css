@@ -123,8 +123,8 @@ section {
     align-items: center;
   }
   .grid div {
-    width: 25vw;
-    height: 25vw;
+    width: 24.5vw;
+    height: 24.5vw;
   }
   #single,
   #multi,
