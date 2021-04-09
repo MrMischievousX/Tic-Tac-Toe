@@ -119,7 +119,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 25vw);
     grid-template-rows: repeat(3, 25vw);
-    grid-gap: 1vw;
+    grid-gap: 0.9vw;
     align-items: center;
   }
   .grid div {
