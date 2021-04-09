@@ -159,6 +159,7 @@ footer {
   footer {
     font-size: large;
     font-weight: 800;
+    position: absolute;
     bottom: 20px;
   }
 }
