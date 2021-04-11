@@ -9,7 +9,7 @@ play++;
 function single() {
   console.log("Single");
   pads.forEach((pad, index) => {
-    pad.addEventListener("click", function () {
+    pad.addEventListener("click", async function () {
       if (
         pads[index].style.background != "red" &&
         pads[index].style.background != "green"
@@ -19,14 +19,15 @@ function single() {
         redWins(index);
         tie();
         if (count < 8) {
-          window.setTimeout(aiTurn(), 1000);
+          await sleep(400);
+          aiTurn();
         }
       }
     });
   });
 }
 
-function aiTurn() {
+async function aiTurn() {
   while (1) {
     var a = Math.floor(Math.random() * 9);
     console.log(a);
@@ -36,8 +37,8 @@ function aiTurn() {
     ) {
       pads[a].style.background = "green";
       count++;
-      window.setTimeout(greenWins(a), 2000);
-      tie();
+      await sleep(200);
+      greenWins(a);
       break;
     }
   }
@@ -73,7 +74,7 @@ function multi() {
 }
 
 // Red Chances of Wins
-function redWins(val) {
+async function redWins(val) {
   red[val] = 1;
   if (
     (red[0] == 1 && red[1] == 1 && red[2] == 1) ||
@@ -86,18 +87,19 @@ function redWins(val) {
     (red[2] == 1 && red[4] == 1 && red[6] == 1)
   ) {
     count++;
-    window.setTimeout(redParty, 200);
+    redParty();
   }
 }
 
-function redParty() {
+async function redParty() {
   document.getElementById("win").textContent = "Red Wins";
   document.getElementById("win").style.color = "Red";
-  window.setTimeout(start, 2000);
+  await sleep(200);
+  start();
 }
 
 // Green Chances of Wins
-function greenWins(val) {
+async function greenWins(val) {
   green[val] = 1;
   if (
     (green[0] == 1 && green[1] == 1 && green[2] == 1) ||
@@ -110,14 +112,15 @@ function greenWins(val) {
     (green[2] == 1 && green[4] == 1 && green[6] == 1)
   ) {
     count++;
-    window.setTimeout(greenParty, 200);
+    greenParty();
   }
 }
 
-function greenParty() {
+async function greenParty() {
   document.getElementById("win").textContent = "Green Wins";
   document.getElementById("win").style.color = "Green";
-  window.setTimeout(start, 2000);
+  await sleep(200);
+  start();
 }
 
 // ReStart
@@ -126,9 +129,19 @@ function start() {
 }
 
 // Tie Check
-function tie() {
+async function tie() {
   if (count == 9) {
     document.getElementById("win").textContent = "Tie";
-    window.setTimeout(start, 2000);
+    await sleep(200);
+    start();
   }
+}
+
+// Delay Function
+function sleep(milisec) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("");
+    }, milisec);
+  });
 }
