@@ -10,6 +10,6 @@
 
 [Have A look at the project](https://mrmischievousx.github.io/Tic-Tac-Toe/)
 
-![alt text](/img/First.PNG)
+![Logo](/img/First.PNG)
 
-![alt text](/img/Second.PNG)
+![Logo](/img/Second.PNG)
